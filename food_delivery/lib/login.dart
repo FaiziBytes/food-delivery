@@ -1,11 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:food_delivery/components/textfield.dart';
 
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
+   LoginPage({super.key});
+   final TextEditingController emailController = TextEditingController();
+   final TextEditingController passwordController = TextEditingController();
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,11 @@ class LoginPage extends StatelessWidget {
             color: Theme.of(context).colorScheme.inversePrimary,
           ),
           ),
-        
+          const SizedBox(height: 10,),
+          CustomTextField(hintText: "Email", controller: emailController, obscureText: false),
+          SizedBox(height: 10,),
+          CustomTextField(hintText: "Password", controller: passwordController, obscureText: true),
+          
         ],
       ),
     );
