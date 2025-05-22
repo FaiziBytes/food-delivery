@@ -1,6 +1,7 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:food_delivery/components/button.dart';
 import 'package:food_delivery/components/textfield.dart';
 
 
@@ -31,7 +32,8 @@ class LoginPage extends StatelessWidget {
           CustomTextField(hintText: "Email", controller: emailController, obscureText: false),
           SizedBox(height: 10,),
           CustomTextField(hintText: "Password", controller: passwordController, obscureText: true),
-          
+          SizedBox(height: 10,),
+          Button(onTap: (){print("Signed in");},),
         ],
       ),
     );
