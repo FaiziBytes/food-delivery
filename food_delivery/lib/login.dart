@@ -32,8 +32,31 @@ class LoginPage extends StatelessWidget {
           CustomTextField(hintText: "Email", controller: emailController, obscureText: false),
           SizedBox(height: 10,),
           CustomTextField(hintText: "Password", controller: passwordController, obscureText: true),
-          SizedBox(height: 10,),
+          SizedBox(height: 15,),
           Button(onTap: (){print("Signed in");},),
+          SizedBox(height: 15,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Not a member?",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+              ),
+              GestureDetector(
+                onTap: (){
+                  print("clicked");
+                },
+                child: Text(" Register now",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
