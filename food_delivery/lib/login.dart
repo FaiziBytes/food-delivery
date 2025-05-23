@@ -5,8 +5,12 @@ import 'package:food_delivery/components/button.dart';
 import 'package:food_delivery/components/textfield.dart';
 
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
-   LoginPage({super.key});
+   void Function()? onTap;
+   LoginPage({super.key,
+   required this.onTap,
+   });
    final TextEditingController emailController = TextEditingController();
    final TextEditingController passwordController = TextEditingController();
    
@@ -33,7 +37,7 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 10,),
           CustomTextField(hintText: "Password", controller: passwordController, obscureText: true),
           SizedBox(height: 15,),
-          Button(onTap: (){print("Signed in");},),
+          Button(onTap: (){print("Signed in");}, text: "Sign in",),
           SizedBox(height: 15,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,9 +49,7 @@ class LoginPage extends StatelessWidget {
               ),
               ),
               GestureDetector(
-                onTap: (){
-                  print("clicked");
-                },
+                onTap: onTap,
                 child: Text(" Register now",
                 style: TextStyle(
                   fontSize: 16,

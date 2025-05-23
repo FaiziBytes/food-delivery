@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Button extends StatelessWidget {
   VoidCallback onTap;
+  String? text;
   Button({super.key,
-  required this.onTap
+  required this.onTap,
+  required this.text
   });
 
   @override
@@ -18,7 +21,7 @@ class Button extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(10),
           child: Center(
-            child: Text("Sign in",
+            child: Text(text!,
              style: TextStyle(
               fontSize: 17,
               color: Theme.of(context).colorScheme.inversePrimary,
