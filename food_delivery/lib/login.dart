@@ -3,17 +3,29 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/components/button.dart';
 import 'package:food_delivery/components/textfield.dart';
+import 'package:food_delivery/homepage.dart';
 
 
 // ignore: must_be_immutable
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
    void Function()? onTap;
    LoginPage({super.key,
    required this.onTap,
    });
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
    final TextEditingController emailController = TextEditingController();
+
    final TextEditingController passwordController = TextEditingController();
-   
+
+   void login(){
+  Navigator.push(context, MaterialPageRoute(builder: (context)=> Homepage()));
+   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +49,9 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 10,),
           CustomTextField(hintText: "Password", controller: passwordController, obscureText: true),
           SizedBox(height: 15,),
-          Button(onTap: (){print("Signed in");}, text: "Sign in",),
+          Button(onTap: (){
+              login();            
+          }, text: "Sign in",),
           SizedBox(height: 15,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -49,7 +63,7 @@ class LoginPage extends StatelessWidget {
               ),
               ),
               GestureDetector(
-                onTap: onTap,
+                onTap: widget.onTap,
                 child: Text(" Register now",
                 style: TextStyle(
                   fontSize: 16,
