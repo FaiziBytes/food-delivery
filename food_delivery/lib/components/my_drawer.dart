@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery/components/drawer_list_tile.dart';
-import 'package:food_delivery/settings.dart';
+import 'package:food_delivery/pages/settings.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});

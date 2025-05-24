@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/login.dart';
-import 'package:food_delivery/register.dart';
+import 'package:food_delivery/pages/login.dart';
+import 'package:food_delivery/pages/register.dart';
 
 
 class LoginOrRegister extends StatefulWidget {
